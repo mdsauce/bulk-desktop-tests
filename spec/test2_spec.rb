@@ -1,8 +1,8 @@
 require_relative "../util/spec_helper"
 
-describe "MyWay Search for Shoes" do
-  it "searches for shoes and renders web results" do
-  	base_url = "https://search.myway.com/search/GGmain.jhtml?p2=&ptb=&n=&cn=US&ln=en&si=&tpr=hpsb&trs=org&brwsid=ad2445e7-4a28-467e-8448-4f3bbb17188c&searchfor=shoes&st=hp"
+describe "Google.com" do
+  it "searches for Selenium Testing" do
+  	base_url = "https://www.google.com/"
     @browser.get(base_url)
   end
 end

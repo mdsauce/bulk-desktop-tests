@@ -19,13 +19,11 @@ RSpec.configure do | config |
       :version => "#{ENV['version']}",
       :browserName => "#{ENV['browserName']}",
       :platform => "#{ENV['platform']}",
+      :build => "#{ENV['build']}",
       :name => test.full_description,
       :seleniumVersion => "3.7.1"
     }
-    #If there's a build tag set it.
-    if ENV['BUILD_TAG'] != nil
-      capabilities_config['build'] = ENV['BUILD_TAG']
-    end
+
     if ENV['TUNNEL_IDENTIFIER'] != nil
       capabilities_config['tunnel-identifier'] = ENV['TUNNEL_IDENTIFIER']
     end
