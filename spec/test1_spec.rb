@@ -1,4 +1,4 @@
-require_relative "../util/spec_helper"
+require_relative "../config/spec_helper"
 
 describe "Google.com" do
   it "resolves to google.com" do

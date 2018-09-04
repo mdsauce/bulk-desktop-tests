@@ -19,7 +19,6 @@ RSpec.configure do | config |
       :version => "#{ENV['version']}",
       :browserName => "#{ENV['browserName']}",
       :platform => "#{ENV['platform']}",
-      :build => "#{ENV['build']}",
       :name => test.full_description,
       :seleniumVersion => "3.7.1"
     }
