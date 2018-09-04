@@ -22,8 +22,8 @@ task :win_10_ff_old do
   run_tests('Windows 10', 'firefox', '52')
 end
 
-task :mac_safari do
-  run_tests('OS X 10.12', 'safari', 'latest')
+task :mac10_12 do
+  run_tests('OS X 10.12', 'chrome', 'latest')
 end
 
 task :mac_safari_new do
@@ -48,7 +48,7 @@ multitask :start => [
     :os_x_10_11_chrome_latest,
     :win7_chrome,
     :win_10_ff_old,
-    :mac_safari,
+    :mac10_12,
     :mac_safari_new,
     :win10_edge,
     :win10_edge_old,
