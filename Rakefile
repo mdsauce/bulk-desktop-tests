@@ -68,6 +68,14 @@ task :'504_mac_safari_new' do
   run_504_tests('OS X 10.13', 'safari', 'latest')
 end
 
+task :'504_mac_chrome' do
+  run_504_tests('OS X 10.13', 'chrome', 'latest')
+end
+
+task :'504_mac_ff' do
+  run_504_tests('OS X 10.13', 'firefox', 'latest')
+end
+
 task :'504_win10_chrome' do
   run_504_tests('Windows 10', 'chrome', 'latest')
 end
@@ -80,5 +88,7 @@ multitask :test504 => [
   :'504_win10_edge',
   :'504_mac_safari_new',
   :'504_win10_chrome',
-  :'504_win10_ff'
+  :'504_win10_ff',
+  :'504_mac_ff',
+  :'504_mac_chrome'
 ]
