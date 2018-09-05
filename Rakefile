@@ -2,6 +2,10 @@ def run_tests(platform, browser, version)
   system("platform=\"#{platform}\" browserName=\"#{browser}\" version=\"#{version}\" parallel_split_test spec")
 end
 
+def run_504_tests(platform, browser, version)
+  system("platform=\"#{platform}\" browserName=\"#{browser}\" version=\"#{version}\" parallel_split_test spec/504/test4_spec.rb")
+end
+
 task :windows_10_chrome_latest do
   run_tests('Windows 10', 'chrome', 'latest')
 end
@@ -56,3 +60,25 @@ multitask :start => [
   ] do
 end
 
+task :'504_win10_edge' do
+  run_504_tests('Windows 10', 'MicrosoftEdge', '17.17134')
+end
+
+task :'504_mac_safari_new' do
+  run_504_tests('OS X 10.13', 'safari', 'latest')
+end
+
+task :'504_win10_chrome' do
+  run_504_tests('Windows 10', 'chrome', 'latest')
+end
+
+task :'504_win10_ff' do
+  run_504_tests('Windows 10', 'firefox', 'latest')
+end
+
+multitask :test504 => [
+  :'504_win10_edge',
+  :'504_mac_safari_new',
+  :'504_win10_chrome',
+  :'504_win10_ff'
+]
