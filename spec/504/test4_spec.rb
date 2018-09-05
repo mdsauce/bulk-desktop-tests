@@ -22,7 +22,7 @@ describe "504 Test" do
 
     # test should be close to 3 minutes in duration at this point.
     # do it again
-    sleep(15)
+    sleep(20)
     base_url = "https://www.google.com/"
     @browser.get(base_url)
     wait = Selenium::WebDriver::Wait.new(:timeout => 10)
@@ -34,6 +34,7 @@ describe "504 Test" do
       @browser.find_element(:link_text, "Introduction — Selenium Documentation")
     }
     selenium_url.click
+    sleep(20)
     textbook_link = wait.until {
       @browser.find_element(:link_text, "Test Design Considerations")
     }
